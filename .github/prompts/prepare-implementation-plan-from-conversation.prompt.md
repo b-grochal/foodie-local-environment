@@ -1,12 +1,12 @@
 ---
-description: "Prepare comprehensive implementation plan for task specified by user with deep codebase analysis and research."
+description: "Prepare comprehensive implementation plan based on the current conversation with deep codebase analysis and research."
 ---
 
-# Prepare comprehensive implementation plan for task
+# Prepare comprehensive implementation plan for conversation
 
 ## Objective
 
-Prepare a **comprehensive implementation plan** through systematic codebase analysis, external research, and strategic planning for selected task/feature. The plan should be detailed and context-rich, enabling an execution agent to implement the feature successfully on the first attempt without needing additional information or research.
+Prepare a **comprehensive implementation plan** through systematic codebase analysis, external research, and strategic planning based on the current conversation context and discussion. The plan should be detailed and context-rich, enabling an execution agent to implement the feature successfully on the first attempt without needing additional information or research.
 
 **Core Principle**: We do NOT write code in this phase. Our goal is to create a context-rich implementation plan that enables one-pass implementation success for ai agents.
 
@@ -14,19 +14,7 @@ Prepare a **comprehensive implementation plan** through systematic codebase anal
 
 ## Process
 
-### Phase 1: Task specification and validation
-
-- Get the name of the task from the user input: {{input:task_name:Enter the name of the task}}. The user MUST provide a task name corresponding to a folder inside `.tasks/`.
-- Validate if the folder .tasks/{task-name}/ exists. If not, return an error message indicating the issue and stop the process.
-- Validate if the task folder contains the required subfolders `examples` and `researches`. If not, return an error message indicating the issue and stop the process.
-
-### Phase 2: Task context gathering and analysis
-
-- Read the `prd.md` file in the task folder to understand the feature request, its requirements, and acceptance criteria. Extract key information about the feature, its purpose, and value to users. The prd file should be located at `.tasks/{task-name}/prd.md`. If the prd file is missing or does not contain necessary information, return an error message indicating the issue and stop the process.
-- Read all files in the `researches` folder and extract relevant information about the feature request, including patterns, existing code references, architectural insights, and any other context that can inform the implementation.
-- Read all files in the `examples` folder and extract relevant code examples that can inform the implementation, paying special attention to patterns, libraries used, and architectural decisions.
-
-### Phase 3: Feature Understanding
+### Phase 1: Feature Understanding
 
 **Deep Feature Analysis:**
 
@@ -44,7 +32,7 @@ I want to <action/goal>
 So that <benefit/value>
 ```
 
-### Phase 4: Codebase Intelligence Gathering
+### Phase 2: Codebase Intelligence Gathering
 
 **Use specialized agents and parallel analysis:**
 
@@ -332,14 +320,10 @@ Execute every command to ensure zero regressions and 100% feature correctness.
 <Additional context, design decisions, trade-offs>
 ```
 
-## Output Format
+## Phase 6: Plan Saving
 
-**Filename**: `.tasks/{task-name}/plans/{kebab-case-descriptive-name}.md`
-
-- Replace `{kebab-case-descriptive-name}` with short, descriptive feature name
-- Examples: `add-user-authentication.md`, `implement-search-api.md`, `refactor-database-layer.md`
-
-**Directory**: Create `.tasks/{task-name}/plans/` if it doesn't exist
+- Get the output location path for saving the implementation plan: {{input:output_path:Enter the name of the task}}
+- Save the generated plan in markdown format to the specified `output_path` path.
 
 ## Quality Criteria
 
