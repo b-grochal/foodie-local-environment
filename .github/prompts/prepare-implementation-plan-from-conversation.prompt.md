@@ -322,7 +322,7 @@ Execute every command to ensure zero regressions and 100% feature correctness.
 
 ## Phase 6: Plan Saving
 
-- Get the output location path for saving the implementation plan: {{input:output_path:Enter the name of the task}}
+- Get the output location path for saving the implementation plan: {{input:output_path:Enter the path for saving the implementation plan}}
 - Save the generated plan in markdown format to the specified `output_path` path.
 
 ## Quality Criteria
