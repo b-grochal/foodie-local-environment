@@ -1,0 +1,20 @@
+name: foodie-local-environment
+services:
+  foodie-ms-sql-server-database:
+    container_name: foodie-ms-sql-server-database
+    image: mcr.microsoft.com/mssql/server:2025-CU5-ubuntu-22.04
+    restart: no
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=P@ssw0rd!
+      - MSSQL_PID=StandardDeveloper
+      - TZ=Etc/UTC
+      - MSSQL_BACKUP_DIR=/var/opt/mssql/backups
+      - MSSQL_DATA_DIR=/var/opt/mssql/data
+      - MSSQL_LCID=1033
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./data/mssql/backups:/var/opt/mssql/backups
+      - ./data/mssql/data:/var/opt/mssql/data
+      - ./data/mssql/log:/var/opt/mssql/log
