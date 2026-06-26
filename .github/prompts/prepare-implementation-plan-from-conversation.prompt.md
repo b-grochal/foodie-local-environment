@@ -95,6 +95,16 @@ So that <benefit/value>
 
 ### Phase 5: Plan Structure Generation
 
+**Calibrate Against a Reference Example Plan (mandatory)**
+- Example plan path: {{input:example_plan_path:Path to an example implementation plan to use as a structural/detail reference (leave blank to skip)}}
+- If a path is provided and the file exists, READ IT IN FULL before drafting anything. Use it strictly as a calibration reference for:
+  - The level of literal detail expected in STEP-BY-STEP TASKS — how dense the BEFORE/AFTER blocks are, how much full file content is shown, how GOTCHA/VALIDATE lines are written
+  - Section structure, ordering, and heading style
+  - Tone and information density throughout the plan
+- Do NOT copy any feature-specific content from the example — its tech stack, file names, library choices, and business logic almost certainly belong to a different feature/codebase. It is a quality and structure benchmark only, never a content source. If anything from the example would end up verbatim in the new plan other than boilerplate section headers, that's a sign you copied content instead of calibrating to structure — undo it.
+- If no path is given, or the file doesn't exist at that path, skip this step and rely on the template below directly; this is not a blocking requirement.
+- Tip for the user: keep one or two strong past plans in a fixed location (e.g. `.claude/examples/`) so this input can point to the same path across invocations.
+
 **Create comprehensive plan with the following structure:**
 
 What's below here is a template for you to fill for the implementation agent:
