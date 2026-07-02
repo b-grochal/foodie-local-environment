@@ -25,7 +25,7 @@ Create dedicated task folder in the foodie-local-environment GitHub repository.
 - Create the following folders inside the newly created task folder:
   - `examples`: A folder to store the code examples related/helpful to the task.
   - `researches`: A folder to store existing code and codebase researches related/helpful for the task.
-- Create the details.md file inside the task folder. The details.md file should contain a brief description of the task, its objectives, and any relevant information that will help developers understand the purpose and scope of the task.
+- Create the details.md file inside the task folder. The details.md file should be empty initially, but it will be used to document the task's objectives, requirements, and any relevant information as the task progresses.
 - The resulting folder structure should look like this:
   .tasks/
   └── my-new-feature/
