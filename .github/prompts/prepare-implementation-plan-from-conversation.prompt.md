@@ -151,6 +151,11 @@ So that <benefit/value>
 - `path/to/new_model.py` - Data model for Y resource
 - `tests/path/to/test_new_service.py` - Unit tests for new service
 
+### Existing Files to Update
+- `path/to/existing_service.py` (lines 50-80) - Why: Contains existing service logic that needs to be extended for new feature
+- `path/to/existing_model.py` (lines 30-60) - Why: Update model to include new field for feature
+- `path/to/existing_test.py` (lines 20-50) - Why: Update tests to include new feature scenarios
+
 ### Patterns to Follow
 <Specific patterns extracted from codebase — actual verbatim code excerpts copied from the project, not paraphrased descriptions>
 

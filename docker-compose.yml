@@ -18,3 +18,13 @@ services:
       - ./.data/mssql/backups:/var/opt/mssql/backups
       - ./.data/mssql/data:/var/opt/mssql/data
       - ./.data/mssql/log:/var/opt/mssql/log
+
+  foodie-redis-database:
+    container_name: foodie-redis-database
+    image: redis:8.8.0-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./.data/redis/data:/data
+    command: redis-server --requirepass P@ssw0rd! --save 20 1 --appendonly yes
+    restart: unless-stopped
